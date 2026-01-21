@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cosme - Skincare organik premium untuk kulit sehat alami. Bahan 100% herbal, teruji klinis, dan bebas kekejaman terhadap hewan.">
+    <meta name="keywords"
+        content="skincare organik, serum wajah, pembersih wajah alami, kosmetik herbal, cosme indonesia">
+    <meta name="author" content="Cosme Indonesia">
+    <meta name="theme-color" content="#7d8f55">
+
+    <title>Cosme | Skincare Organik Premium</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cosme.id/">
+    <meta property="og:title" content="Cosme - Temukan Keajaiban Alam">
+    <meta property="og:description" content="Perawatan kulit organik terbaik yang dipercaya oleh ribuan pelanggan.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cosme+Indonesia">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cosme Indonesia",
+      "url": "https://www.cosme.id",
+      "logo": "https://placehold.co/150x50?text=Cosme",
+      "description": "Produk perawatan kulit organik premium yang terbuat dari 100% bahan alami.",
+      "sameAs": [
+        "https://www.instagram.com/cosme",
+        "https://www.tiktok.com/@cosme"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-895-6390-68080",
+        "contactType": "Customer service"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #7d8f55;
+            --dark-green: #5a6b3a;
+            --bg-cream: #FDFBF7;
+            --bg-footer: #F2EBD9;
+            --text-heading: #1A1A1A;
+            --text-body: #555555;
+
+            --font-heading: 'Tenor Sans', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            line-height: 1.7;
+            background-color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: var(--font-heading);
+            color: var(--text-heading);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Helpers */
+        .text-green {
+            color: var(--primary-green) !important;
+        }
+
+        .bg-cream {
+            background-color: var(--bg-cream);
+        }
+
+        /* Buttons */
+        .btn-custom {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 2px;
+            border: 1px solid var(--primary-green);
+            transition: all 0.4s ease;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background-color: transparent;
+            color: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(125, 143, 85, 0.2);
+        }
+
+        /* Navbar - DIPERBAIKI: Padding dikurangi dari 25px ke 12px */
+        .navbar {
+            padding: 12px 0;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-weight: 500;
+            color: var(--text-heading);
+            font-size: 0.95rem;
+            margin: 0 12px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: var(--primary-green);
+            transition: width .3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Social Icons di Navbar */
+        .nav-social-icon {
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            transition: 0.3s;
+        }
+
+        .nav-social-icon:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero - DIPERBAIKI: Padding atas ditambah menjadi 120px untuk kompensasi navbar */
+        .hero-section {
+            background-color: var(--bg-cream);
+            padding: 120px 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .img-soft-shadow {
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
+        }
+
+        /* Features */
+        .feature-icon-box {
+            padding: 25px;
+            border: 1px solid #eee;
+            background: #fff;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-icon-box:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* FAQ */
+        .accordion-item {
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            font-family: var(--font-body);
+            font-weight: 600;
+            background-color: transparent;
+            padding: 20px 0;
+            color: var(--text-heading);
+            box-shadow: none !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--primary-green);
+            background: transparent;
+        }
+
+        .accordion-body {
+            padding-left: 0;
+            padding-top: 0;
+            color: var(--text-body);
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #f0f0f0;
+            height: 100%;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-footer);
+            padding-top: 80px;
+            padding-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        footer h5 {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        footer ul li {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--primary-green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">COSME</a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#features">Keunggulan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Ulasan</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-4 align-items-center mt-3 mt-lg-0">
+                        <a href="#" aria-label="Instagram" class="nav-social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="TikTok" class="nav-social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube" class="nav-social-icon"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <p class="text-uppercase text-green fw-bold mb-3 small" style="letter-spacing: 2px;">Organik &
+                            Murni</p>
+                        <h1 class="hero-title">Temukan Keajaiban <br>Alam bersama <span class="fst-italic">Cosme</span>
+                        </h1>
+                        <p class="mb-5 lead fs-6">
+                            Kembalikan kilau alami kulit Anda dengan bahan-bahan organik terbaik.
+                            Dibuat murni dari bumi, memanfaatkan anugerah alam khusus untuk Anda.
+                        </p>
+                        <a href="#products" class="btn btn-custom shadow-sm">LIHAT KOLEKSI</a>
+                    </div>
+                    <div class="col-lg-6 position-relative text-center">
+                        <img src="img/hero.png" alt="Produk Cosme Skincare" class="img-fluid img-soft-shadow"
+                            width="600" height="600">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 border-bottom">
+            <div class="container">
+                <div class="row g-4 align-items-center text-center text-md-start">
+                    <div class="col-md-4">
+                        <p class="fs-5 mb-0" style="font-family: var(--font-heading);">Dipercaya oleh <strong
+                                class="text-green">350rb+</strong><br>Pelanggan Setia</p>
+                    </div>
+                    <div class="col-md-4 border-start-md border-end-md text-center">
+                        <h3 class="display-6 mb-0">6Jt+</h3>
+                        <p class="small text-uppercase text-muted ls-1">Penjualan Tahunan</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="display-6 mb-0">4.8</h3>
+                        <div class="text-warning small mb-1">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small text-uppercase text-muted ls-1">Rating Tertinggi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 my-5" id="products">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <img src="img/cleanser.png" alt="Pembersih Wajah Cosme" class="img-fluid w-100 img-soft-shadow"
+                            loading="lazy">
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <span class="badge bg-cream text-dark border mb-3 rounded-pill px-3 py-2">PRODUK TERLARIS</span>
+                        <h2 class="display-5 mb-4">Pembersih Wajah Terbaik</h2>
+                        <p class="text-muted mb-5">
+                            Pembersih Kulit Organik kami adalah bukti kemurnian. Dibuat dengan bahan organik terbaik,
+                            pembersih lembut namun efektif ini dirancang untuk memurnikan dan merevitalisasi kulit tanpa
+                            bahan kimia keras.
+                        </p>
+
+                        <div class="row g-4 text-center">
+                            <div class="col-4">
+                                <div class="p-3 bg-cream rounded h-100">
+                                    <h4 class="text-green mb-1">100%</h4>
+                                    <span class="small text-uppercase">Organik</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-3 bg-cream rounded h-100">
+                                    <h4 class="text-green mb-1">Klinis</h4>
+                                    <span class="small text-uppercase">Teruji</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-3 bg-cream rounded h-100">
+                                    <h4 class="text-green mb-1">Vegan</h4>
+                                    <span class="small text-uppercase">Produk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-cream">
+            <div class="container">
+                <div class="row align-items-center flex-column-reverse flex-lg-row">
+                    <div class="col-lg-5">
+                        <h2 class="display-5 mb-4">Serum & Pelembab</h2>
+                        <p class="text-muted mb-4">
+                            Hidrasi intens, mengenyalkan, dan menghaluskan. Serum kami memenuhi beragam kebutuhan kulit,
+                            meninggalkan kulit yang halus dan kenyal sepanjang hari.
+                        </p>
+                        <ul class="list-unstyled mb-5">
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="bi bi-check2-circle text-green fs-5 me-3"></i>
+                                <span>Meresap dalam untuk mengembalikan elastisitas.</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="bi bi-check2-circle text-green fs-5 me-3"></i>
+                                <span>Formula tidak lengket, nyaman seharian.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 mb-5 mb-lg-0">
+                        <img src="img/serum.png" alt="Koleksi Serum Cosme" class="img-fluid w-100 img-soft-shadow"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 my-5" id="features">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <img src="img/detail.png" alt="Detail Produk" class="img-fluid rounded" loading="lazy">
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <h2 class="mb-5">Mengapa Memilih Kami?</h2>
+
+                        <div class="feature-icon-box d-flex align-items-start mb-4">
+                            <div class="me-4 text-green fs-3"><i class="bi bi-droplet"></i></div>
+                            <div>
+                                <h5 class="mb-2">Bahan Berkualitas</h5>
+                                <p class="small text-muted mb-0">Bersumber langsung dari pertanian organik bersertifikat
+                                    untuk menjamin khasiat maksimal.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-icon-box d-flex align-items-start mb-4">
+                            <div class="me-4 text-green fs-3"><i class="bi bi-recycle"></i></div>
+                            <div>
+                                <h5 class="mb-2">Ramah Lingkungan</h5>
+                                <p class="small text-muted mb-0">Kemasan kami 100% dapat didaur ulang dan dibuat dari
+                                    bahan yang berkelanjutan.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-icon-box d-flex align-items-start">
+                            <div class="me-4 text-green fs-3"><i class="bi bi-heart"></i></div>
+                            <div>
+                                <h5 class="mb-2">Bebas Kekejaman Hewan</h5>
+                                <p class="small text-muted mb-0">Kami tidak pernah melakukan uji coba pada hewan.
+                                    Kecantikan harus penuh kasih sayang.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-cream">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-6">Pertanyaan Umum (FAQ)</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="accordion" id="faqLeft">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#q1">
+                                        Apakah bisa kirim ke seluruh Indonesia?
+                                    </button>
+                                </h2>
+                                <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+                                    <div class="accordion-body small">Ya, kami melayani pengiriman ke seluruh wilayah
+                                        Indonesia dengan packing aman.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#q2">
+                                        Apakah kemasannya bisa didaur ulang?
+                                    </button>
+                                </h2>
+                                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+                                    <div class="accordion-body small">Tentu saja. Kami menggunakan kaca dan kertas daur
+                                        ulang untuk menjaga kelestarian bumi.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="accordion" id="faqRight">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#q4">
+                                        Apa manfaat utama Oat bagi kulit?
+                                    </button>
+                                </h2>
+                                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+                                    <div class="accordion-body small">Oat sangat baik untuk menenangkan iritasi,
+                                        melembabkan, dan memperbaiki skin barrier.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#q5">
+                                        Berapa lama estimasi pengiriman?
+                                    </button>
+                                </h2>
+                                <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+                                    <div class="accordion-body small">Pulau Jawa: 2-3 hari kerja. Luar Jawa: 4-7 hari
+                                        kerja tergantung lokasi.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-white py-5" id="reviews">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-6">Apa Kata Mereka?</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="text-warning small mb-3"><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <p class="small text-muted mb-4">"Suka banget sama cleansernya. Wajah jadi kerasa bersih dan
+                                segar tanpa bikin kulit ketarik atau kering."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/person1.png" alt="User" class="rounded-circle me-3" width="40"
+                                    height="40">
+                                <div>
+                                    <h6 class="fw-bold mb-0">Siti Rahma</h6>
+                                    <small class="text-muted">Mahasiswi</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="text-warning small mb-3"><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <p class="small text-muted mb-4">"Serumnya juara! Bekas jerawat memudar dalam 2 minggu
+                                pemakaian rutin. Wajib coba sih."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/person2.png" alt="User" class="rounded-circle me-3" width="40"
+                                    height="40">
+                                <div>
+                                    <h6 class="fw-bold mb-0">Julia W.</h6>
+                                    <small class="text-muted">Karyawan Swasta</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="text-warning small mb-3"><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <p class="small text-muted mb-4">"Pengiriman cepat dan packagingnya cantik banget. Sangat
+                                aesthetic dan aman sampai tujuan."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/person3.png" alt="User" class="rounded-circle me-3" width="40"
+                                    height="40">
+                                <div>
+                                    <h6 class="fw-bold mb-0">Bella A.</h6>
+                                    <small class="text-muted">Influencer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-white">
+                        <h2 class="mb-3" style="color: white;">Konsultasi & Pemesanan</h2>
+                        <p class="mb-4 opacity-75">Ingin kulit sehat alami? Konsultasikan masalah kulit Anda atau pesan
+                            produk langsung melalui WhatsApp kami.</p>
+                        <a href="https://wa.me/62895639068080?text=Halo%20Cosme,%20saya%20ingin%20konsultasi%20tentang%20produk%20skincare%20Anda."
+                            target="_blank" class="btn btn-light rounded-pill px-5 py-3 fw-bold shadow">
+                            <i class="bi bi-whatsapp me-2 text-success"></i> Chat WhatsApp Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="mb-4">COSME</h4>
+                    <p class="text-muted small mb-4 pe-4">
+                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi,
+                        keberlanjutan, dan khasiat nyata di setiap botolnya.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Belanja</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">Semua Produk</a></li>
+                        <li><a href="#">Paling Laris</a></li>
+                        <li><a href="#">Produk Baru</a></li>
+                        <li><a href="#">Paket Hemat</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Perusahaan</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">Cerita Kami</a></li>
+                        <li><a href="#">Keberlanjutan</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Pers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Bantuan</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Pengiriman & Retur</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Lacak Pesanan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top border-secondary-subtle">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">&copy; 2026 Cosme Indonesia. Hak Cipta Dilindungi.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="small text-muted me-3">Kebijakan Privasi</a>
+                    <a href="#" class="small text-muted">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
