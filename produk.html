@@ -13,6 +13,12 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 
+    <meta property="og:url" content="https://skincarecosme.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Produk Kami | Cosme Indonesia">
+    <meta property="og:description" content="Katalog Lengkap Produk Cosme - Skincare organik premium.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cosme+Produk">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Tenor+Sans&display=swap"
@@ -20,6 +26,21 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cosme Indonesia",
+      "url": "https://skincarecosme.vercel.app/",
+      "logo": "https://placehold.co/150x50?text=Cosme",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-895-6390-68080",
+        "contactType": "Customer service"
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -85,7 +106,7 @@
             box-shadow: 0 5px 15px rgba(125, 143, 85, 0.2);
         }
 
-        /* Outline Button (Detail) */
+        /* Outline Button */
         .btn-outline-custom {
             background-color: transparent;
             color: var(--primary-green);
@@ -245,6 +266,42 @@
         footer a:hover {
             color: var(--primary-green);
         }
+
+        /* Custom Search Input */
+        .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.25rem rgba(125, 143, 85, 0.25);
+        }
+
+        /* MEDIA QUERIES MOBILE (Agar Proporsional) */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+
+            .page-header {
+                padding: 100px 0 40px 0;
+            }
+
+            .display-4 {
+                font-size: 2.2rem;
+            }
+
+            footer {
+                padding-top: 50px;
+                text-align: center;
+            }
+
+            footer .d-flex.gap-3 {
+                justify-content: center;
+            }
+
+            .btn-wa-footer {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -261,10 +318,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link active" href="produk.html">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#features">Keunggulan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Ulasan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carapesan.html">Cara Pesan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     </ul>
 
                     <div class="d-flex gap-4 align-items-center mt-3 mt-lg-0">
@@ -309,7 +366,7 @@
                         <div class="product-card">
                             <div class="product-img-wrapper">
                                 <span class="product-badge">Best Seller</span>
-                                <img src="img/cleanser.png" alt="Gentle Oat Cleanser">
+                                <img src="img/gentle-oat-cleanser.png" alt="Gentle Oat Cleanser">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Pembersih</small>
@@ -318,8 +375,9 @@
                                 <p class="text-green fw-bold product-price">Rp 129.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Gentle Oat Cleanser"
-                                    data-price="Rp 129.000" data-img="img/cleanser.png" data-cat="Pembersih"
-                                    data-desc="Pembersih wajah lembut dengan ekstrak oat organik. Efektif mengangkat kotoran tanpa membuat kulit kering.">
+                                    data-price="Rp 129.000" data-img="img/gentle-oat-cleanser.png" data-cat="Pembersih"
+                                    data-desc="Pembersih wajah lembut dengan ekstrak oat organik. Efektif mengangkat kotoran tanpa membuat kulit kering atau ketarik."
+                                    data-ingredients="Colloidal Oatmeal, Aloe Barbadensis Leaf Extract, Glycerin, Chamomile Extract, Aqua.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -330,7 +388,7 @@
                         <div class="product-card">
                             <div class="product-img-wrapper">
                                 <span class="product-badge">Favorite</span>
-                                <img src="img/serum.png" alt="Hydra Glow Serum">
+                                <img src="img/hydra-glow-serum.png" alt="Hydra Glow Serum">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Serum</small>
@@ -339,8 +397,9 @@
                                 <p class="text-green fw-bold product-price">Rp 189.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Hydra Glow Serum"
-                                    data-price="Rp 189.000" data-img="img/serum.png" data-cat="Serum"
-                                    data-desc="Serum hidrasi intensif dengan Hyaluronic Acid dan Vitamin C. Mencerahkan dan melembapkan sepanjang hari.">
+                                    data-price="Rp 189.000" data-img="img/hydra-glow-serum.png" data-cat="Serum"
+                                    data-desc="Serum hidrasi intensif dengan Hyaluronic Acid dan Vitamin C. Mencerahkan kulit kusam, menyamarkan noda hitam, dan menjaga kelembapan."
+                                    data-ingredients="Hyaluronic Acid, Vitamin C (Ascorbic Acid), Niacinamide, Rosehip Oil, Vitamin E.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -350,8 +409,7 @@
                     <div class="col-md-6 col-lg-3 product-item" data-category="pelembab cream pagi">
                         <div class="product-card">
                             <div class="product-img-wrapper">
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Day+Cream"
-                                    alt="Daily Day Cream">
+                                <img src="img/daily-day-cream.png" alt="Daily Day Cream">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Pelembab</small>
@@ -360,10 +418,9 @@
                                 <p class="text-green fw-bold product-price">Rp 145.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Daily Day Cream"
-                                    data-price="Rp 145.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Day+Cream"
-                                    data-cat="Pelembab"
-                                    data-desc="Krim pagi ringan dengan antioksidan. Melindungi kulit dari radikal bebas dan menjaga kelembapan.">
+                                    data-price="Rp 145.000" data-img="img/daily-day-cream.png" data-cat="Pelembab"
+                                    data-desc="Krim pagi ringan dengan antioksidan. Melindungi kulit dari radikal bebas dan menjaga kelembapan seharian. Tekstur tidak lengket."
+                                    data-ingredients="Green Tea Extract, Shea Butter, Vitamin E, Jojoba Oil, SPF 30 Agents.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -373,7 +430,7 @@
                     <div class="col-md-6 col-lg-3 product-item" data-category="toner penyegar">
                         <div class="product-card">
                             <div class="product-img-wrapper">
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Toner" alt="Rose Water Toner">
+                                <img src="img/rose-water-toner.png" alt="Rose Water Toner">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Toner</small>
@@ -382,9 +439,9 @@
                                 <p class="text-green fw-bold product-price">Rp 99.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Rose Water Toner"
-                                    data-price="Rp 99.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Toner" data-cat="Toner"
-                                    data-desc="Toner air mawar organik. Menyeimbangkan pH kulit dan menenangkan kemerahan.">
+                                    data-price="Rp 99.000" data-img="img/rose-water-toner.png" data-cat="Toner"
+                                    data-desc="Toner penyegar dengan air mawar asli. Menyeimbangkan pH kulit setelah cuci muka dan menenangkan kemerahan."
+                                    data-ingredients="Pure Rose Distillate, Witch Hazel Extract, Aloe Vera Gel, Glycerin.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -408,7 +465,8 @@
                                     data-price="Rp 155.000"
                                     data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Night+Cream"
                                     data-cat="Pelembab"
-                                    data-desc="Krim malam kaya nutrisi yang bekerja saat Anda tidur untuk memperbaiki tekstur kulit dan regenerasi sel.">
+                                    data-desc="Krim malam kaya nutrisi yang bekerja saat Anda tidur untuk memperbaiki tekstur kulit dan regenerasi sel."
+                                    data-ingredients="Plant-based Retinol, Ceramides, Peptides, Lavender Oil, Squalane.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -431,7 +489,8 @@
                                     data-price="Rp 115.000"
                                     data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Sunscreen"
                                     data-cat="Proteksi"
-                                    data-desc="Tabir surya ringan tanpa whitecast. Melindungi kulit dari sinar UVA dan UVB dengan hasil akhir matte.">
+                                    data-desc="Tabir surya ringan tanpa whitecast. Melindungi kulit dari sinar UVA dan UVB dengan hasil akhir matte."
+                                    data-ingredients="Zinc Oxide, Titanium Dioxide, Centella Asiatica, Niacinamide.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -454,7 +513,8 @@
                                     data-price="Rp 135.000"
                                     data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Eye+Serum"
                                     data-cat="Perawatan Mata"
-                                    data-desc="Serum mata dengan kafein dan peptide. Mengurangi kantung mata dan menyamarkan garis halus.">
+                                    data-desc="Serum mata dengan kafein dan peptide. Mengurangi kantung mata dan menyamarkan garis halus."
+                                    data-ingredients="Caffeine, Peptides, Cucumber Extract, Hyaluronic Acid.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -477,7 +537,8 @@
                                     data-price="Rp 105.000"
                                     data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Clay+Mask"
                                     data-cat="Masker"
-                                    data-desc="Masker tanah liat untuk detoksifikasi pori-pori. Mengangkat minyak berlebih tanpa membuat kulit kering.">
+                                    data-desc="Masker tanah liat untuk detoksifikasi pori-pori. Mengangkat minyak berlebih tanpa membuat kulit kering."
+                                    data-ingredients="Kaolin Clay, Mugwort Extract, Salicylic Acid (Willow Bark), Tea Tree Oil.">
                                     Lihat Detail
                                 </button>
                             </div>
@@ -533,6 +594,11 @@
                             <h4 class="text-green fw-bold mb-4" id="modalPrice">Rp 0</h4>
                             <p class="text-muted mb-4" id="modalDesc">Description goes here.</p>
 
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Komposisi Utama:</h6>
+                                <p class="small text-muted" id="modalIngredients">Loading...</p>
+                            </div>
+
                             <div class="d-grid gap-2">
                                 <a id="modalWaLink" href="#" target="_blank" class="btn btn-custom">
                                     <i class="bi bi-whatsapp me-2"></i> Beli via WhatsApp
@@ -547,12 +613,12 @@
 
     <footer>
         <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-4 col-md-6">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
                     <h4 class="mb-4">COSME</h4>
                     <p class="text-muted small mb-4 pe-4">
-                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi,
-                        keberlanjutan, dan khasiat nyata di setiap botolnya.
+                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi dan
+                        khasiat nyata.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
@@ -560,14 +626,17 @@
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
                     </div>
                 </div>
+
                 <div class="col-lg-2 col-md-6">
                     <h5>Belanja</h5>
                     <ul class="list-unstyled small">
                         <li><a href="#">Semua Produk</a></li>
                         <li><a href="#">Paling Laris</a></li>
                         <li><a href="#">Produk Baru</a></li>
+                        <li><a href="#">Paket Hemat</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-2 col-md-6">
                     <h5>Perusahaan</h5>
                     <ul class="list-unstyled small">
@@ -577,14 +646,24 @@
                         <li><a href="#">Pers</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-2 col-md-6">
                     <h5>Bantuan</h5>
                     <ul class="list-unstyled small">
                         <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Pengiriman & Retur</a></li>
+                        <li><a href="#">Retur Produk</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Lacak Pesanan</a></li>
                     </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12">
+                    <h5>Hubungi Kami</h5>
+                    <p class="small text-muted mb-3">Butuh bantuan cepat?</p>
+                    <a href="https://wa.me/62895639068080" target="_blank"
+                        class="btn btn-custom btn-wa-footer shadow-sm w-100 text-white">
+                        <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp
+                    </a>
                 </div>
             </div>
             <div class="row mt-5 pt-4 border-top border-secondary-subtle">
@@ -636,17 +715,21 @@
         productDetailModal.addEventListener('show.bs.modal', event => {
             const button = event.relatedTarget;
 
+            // Ambil data dari atribut tombol
             const title = button.getAttribute('data-title');
             const price = button.getAttribute('data-price');
             const img = button.getAttribute('data-img');
             const cat = button.getAttribute('data-cat');
             const desc = button.getAttribute('data-desc');
+            const ingredients = button.getAttribute('data-ingredients'); // Ambil Ingredients
 
+            // Isi elemen modal
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('modalPrice').textContent = price;
             document.getElementById('modalImg').src = img;
             document.getElementById('modalCat').textContent = cat;
             document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('modalIngredients').textContent = ingredients; // Isi Ingredients
 
             const waNumber = "62895639068080";
             const waMessage = `Halo Cosme, saya tertarik untuk membeli produk *${title}* seharga ${price}. Mohon info selanjutnya.`;

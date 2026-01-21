@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Tentang Cosme Indonesia - Mengenal lebih dekat filosofi, cerita, dan komitmen kami terhadap kecantikan organik.">
-    <meta name="keywords" content="tentang cosme, profil perusahaan skincare, visi misi cosme">
+        content="Panduan cara memesan produk skincare Cosme Indonesia. Mudah, aman, dan bisa konsultasi gratis.">
+    <meta name="keywords" content="cara pesan cosme, cara beli skincare, panduan belanja cosme">
     <meta name="author" content="Cosme Indonesia">
     <meta name="theme-color" content="#7d8f55">
 
-    <title>Tentang Kami | Cosme Indonesia</title>
+    <title>Cara Pesan | Cosme Indonesia</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://skincarecosme.vercel.app/">
-    <meta property="og:title" content="Tentang Kami | Cosme Indonesia">
-    <meta property="og:description" content="Kisah perjalanan Cosme dalam menghadirkan skincare organik terbaik.">
-    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Tentang+Cosme">
+    <meta property="og:url" content="https://skincarecosme.vercel.app/carapesan.html">
+    <meta property="og:title" content="Cara Pesan | Cosme Indonesia">
+    <meta property="og:description" content="Panduan mudah berbelanja produk skincare organik terbaik.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cara+Pesan+Cosme">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,29 +127,47 @@
             text-align: center;
         }
 
-        /* About Image */
-        .about-img {
-            border-radius: 2px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Values Box */
-        .value-box {
-            padding: 40px 30px;
+        /* Step Card Styles */
+        .step-card {
             text-align: center;
+            padding: 30px 20px;
             border: 1px solid #eee;
-            transition: 0.3s;
+            border-radius: 8px;
             height: 100%;
+            transition: 0.3s;
+            background: #fff;
         }
 
-        .value-box:hover {
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border-color: var(--primary-green);
-            background-color: var(--bg-cream);
         }
 
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--primary-green);
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Payment Methods */
+        .payment-box {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
@@ -160,7 +178,7 @@
             position: relative;
         }
 
-        /* CTA Buttons Specific Styles */
+        /* CTA Buttons */
         .btn-cta-primary {
             background-color: #fff;
             color: var(--primary-green);
@@ -236,7 +254,7 @@
             color: var(--primary-green);
         }
 
-        /* MEDIA QUERIES MOBILE (Agar Proporsional) */
+        /* Media Query Mobile */
         @media (max-width: 768px) {
             .navbar-brand {
                 font-size: 1.5rem;
@@ -263,7 +281,6 @@
                 justify-content: center;
             }
 
-            /* Button WA Full Width di Mobile */
             .btn-wa-footer {
                 width: 100%;
                 display: block;
@@ -286,9 +303,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="about.html">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="carapesan.html">Cara Pesan</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="carapesan.html">Cara Pesan</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     </ul>
 
@@ -305,43 +322,56 @@
     <main>
         <section class="page-header">
             <div class="container">
-                <span class="text-green text-uppercase fw-bold small mb-2 d-block" style="letter-spacing: 2px;">Siapa
-                    Kami</span>
-                <h1 class="display-4 mb-3">Kisah di Balik <span class="fst-italic">Cosme</span></h1>
+                <span class="text-green text-uppercase fw-bold small mb-2 d-block" style="letter-spacing: 2px;">Panduan
+                    Belanja</span>
+                <h1 class="display-4 mb-3">Cara Pemesanan</h1>
                 <p class="text-muted mx-auto" style="max-width: 600px;">
-                    Berawal dari kecintaan pada alam, kami berkomitmen menghadirkan perawatan kulit yang tidak hanya
-                    efektif, tetapi juga etis dan berkelanjutan.
+                    Ikuti langkah mudah berikut untuk mendapatkan produk perawatan kulit organik favorit Anda.
                 </p>
             </div>
         </section>
 
         <section class="py-5">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <img src="img/about.png" alt="Cosme Lab Story" class="img-fluid about-img w-100">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-card">
+                            <span class="step-number">1</span>
+                            <i class="bi bi-bag-heart step-icon"></i>
+                            <h5 class="mb-3">Pilih Produk</h5>
+                            <p class="text-muted small">Jelajahi halaman <a href="produk.html"
+                                    class="text-green fw-bold text-decoration-none">Produk</a> kami dan tentukan mana
+                                yang sesuai dengan kebutuhan kulit Anda.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-6 ps-lg-5">
-                        <h2 class="display-6 mb-4">Kembali ke Akar Alam</h2>
-                        <p class="text-muted mb-4">
-                            Cosme didirikan pada tahun 2018 dengan satu misi sederhana: menciptakan produk perawatan
-                            kulit yang jujur. Di tengah industri yang dipenuhi bahan sintetis berbahaya, kami memilih
-                            jalan yang berbeda.
-                        </p>
-                        <p class="text-muted mb-4">
-                            Kami percaya bahwa kulit Anda layak mendapatkan yang terbaik dari bumi. Itulah sebabnya kami
-                            bekerja sama langsung dengan petani lokal untuk mendapatkan bahan-bahan organik berkualitas
-                            tinggi seperti Oat, Mawar, dan Aloe Vera yang dipanen secara etis.
-                        </p>
-                        <div class="row mt-5">
-                            <div class="col-6">
-                                <h2 class="fw-bold text-green">100%</h2>
-                                <p class="small text-muted text-uppercase">Bahan Organik</p>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="fw-bold text-green">0%</h2>
-                                <p class="small text-muted text-uppercase">Bahan Kimia Keras</p>
-                            </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-card">
+                            <span class="step-number">2</span>
+                            <i class="bi bi-chat-dots step-icon"></i>
+                            <h5 class="mb-3">Konsultasi & Pesan</h5>
+                            <p class="text-muted small">Klik tombol "Lihat Detail" atau "Beli via WhatsApp". Anda akan
+                                terhubung dengan CS kami untuk konsultasi atau pemesanan langsung.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-card">
+                            <span class="step-number">3</span>
+                            <i class="bi bi-credit-card step-icon"></i>
+                            <h5 class="mb-3">Pembayaran</h5>
+                            <p class="text-muted small">Lakukan pembayaran melalui Transfer Bank atau E-Wallet sesuai
+                                instruksi yang diberikan oleh tim kami di WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-card">
+                            <span class="step-number">4</span>
+                            <i class="bi bi-box-seam step-icon"></i>
+                            <h5 class="mb-3">Pengiriman</h5>
+                            <p class="text-muted small">Pesanan Anda akan diproses dan dikirim. Kami akan memberikan
+                                nomor resi agar Anda dapat melacak paket Anda.</p>
                         </div>
                     </div>
                 </div>
@@ -350,80 +380,69 @@
 
         <section class="py-5 bg-cream">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="mb-3">Filosofi Kami</h2>
-                    <p class="text-muted">Tiga pilar utama yang menjadi pondasi setiap produk Cosme.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="value-box bg-white">
-                            <div class="value-icon"><i class="bi bi-flower1"></i></div>
-                            <h4 class="mb-3">Murni & Natural</h4>
-                            <p class="text-muted small">Tanpa paraben, tanpa sulfat, dan tanpa pewangi buatan. Hanya
-                                kebaikan murni dari ekstrak tumbuhan.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="value-box bg-white">
-                            <div class="value-icon"><i class="bi bi-globe-asia-australia"></i></div>
-                            <h4 class="mb-3">Berkelanjutan</h4>
-                            <p class="text-muted small">Kemasan kami dirancang untuk meminimalkan jejak karbon. Kami
-                                menggunakan kaca daur ulang dan tinta kedelai.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="value-box bg-white">
-                            <div class="value-icon"><i class="bi bi-heart-pulse"></i></div>
-                            <h4 class="mb-3">Etis & Aman</h4>
-                            <p class="text-muted small">Teruji secara dermatologis dan 100% Cruelty-Free. Kami tidak
-                                pernah menguji produk pada hewan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <h2 class="mb-4">Metode Pembayaran & Pengiriman</h2>
+                        <p class="text-muted mb-4">Kami menyediakan berbagai opsi pembayaran yang aman dan bekerja sama
+                            dengan ekspedisi terpercaya untuk memastikan paket sampai dengan selamat.</p>
 
-        <section class="py-5 border-bottom">
-            <div class="container">
-                <div class="row g-4 align-items-center text-center text-md-start">
-                    <div class="col-md-4">
-                        <p class="fs-5 mb-0" style="font-family: var(--font-heading);">Tumbuh bersama <strong
-                                class="text-green">350rb+</strong><br>Komunitas Wanita</p>
-                    </div>
-                    <div class="col-md-4 border-start-md border-end-md text-center">
-                        <h3 class="display-6 mb-0">6Jt+</h3>
-                        <p class="small text-uppercase text-muted ls-1">Produk Terjual</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h3 class="display-6 mb-0">4.8</h3>
-                        <div class="text-warning small mb-1">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i>
+                        <div class="payment-box bg-white">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-wallet2 text-green me-2"></i> Pembayaran</h6>
+                            <p class="small text-muted mb-0">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay.</p>
                         </div>
-                        <p class="small text-uppercase text-muted ls-1">Rating Kepuasan</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="py-5">
-            <div class="container">
-                <div class="row align-items-center flex-column-reverse flex-lg-row">
-                    <div class="col-lg-6 pe-lg-5">
-                        <span class="text-green text-uppercase fw-bold small mb-2 d-block">Founder Cosme</span>
-                        <h2 class="mb-4">"Kecantikan Sejati Dimulai dari Kulit yang Sehat"</h2>
-                        <p class="text-muted fst-italic mb-4">
-                            "Saya mendirikan Cosme karena frustrasi mencari produk yang aman untuk kulit sensitif saya.
-                            Saya ingin menciptakan sesuatu yang tidak hanya bekerja, tetapi juga membuat Anda merasa
-                            tenang saat menggunakannya. Cosme adalah janji saya untuk Anda."
-                        </p>
-                        <h5 class="fw-bold mb-0" style="font-family: var(--font-heading);">Sarah Pratiwi</h5>
-                        <p class="small text-muted">CEO & Founder</p>
+                        <div class="payment-box bg-white">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-truck text-green me-2"></i> Ekspedisi</h6>
+                            <p class="small text-muted mb-0">JNE, J&T, SiCepat (Regular & Next Day).</p>
+                        </div>
                     </div>
-                    <div class="col-lg-6 mb-5 mb-lg-0 text-center">
-                        <img src="img/person1.png" alt="Founder" class="img-fluid rounded-circle"
-                            style="max-width: 300px;">
+
+                    <div class="col-lg-6 offset-lg-1">
+                        <h3 class="mb-4">Pertanyaan Populer</h3>
+                        <div class="accordion" id="faqOrder">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#f1">
+                                        Apakah bisa COD (Bayar di Tempat)?
+                                    </button>
+                                </h2>
+                                <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqOrder">
+                                    <div class="accordion-body small text-muted">
+                                        Saat ini kami melayani COD untuk area tertentu melalui pemesanan via WhatsApp.
+                                        Silakan tanyakan ketersediaan area Anda pada admin kami.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#f2">
+                                        Berapa lama proses pengemasan?
+                                    </button>
+                                </h2>
+                                <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqOrder">
+                                    <div class="accordion-body small text-muted">
+                                        Pesanan yang dikonfirmasi sebelum jam 14.00 WIB akan dikirim di hari yang sama.
+                                        Selebihnya akan dikirim hari berikutnya.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#f3">
+                                        Apakah ada garansi jika barang rusak?
+                                    </button>
+                                </h2>
+                                <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqOrder">
+                                    <div class="accordion-body small text-muted">
+                                        Ya, kami memberikan garansi ganti baru jika produk diterima dalam keadaan pecah
+                                        atau rusak. Wajib menyertakan video unboxing.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,16 +452,16 @@
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-white">
-                        <h2 class="mb-3" style="color: white;">Jadilah Bagian dari Perubahan</h2>
-                        <p class="mb-4 opacity-75">Bergabunglah dengan gerakan kecantikan bersih kami. Temukan produk
-                            yang tepat untuk kulitmu hari ini.</p>
+                        <h2 class="mb-3" style="color: white;">Sudah Siap Memesan?</h2>
+                        <p class="mb-4 opacity-75">Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan
+                            lebih lanjut.</p>
 
                         <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
                             <a href="produk.html" class="btn-cta-primary shadow">
-                                LIHAT PRODUK KAMI
+                                PILIH PRODUK
                             </a>
                             <a href="https://wa.me/62895639068080" target="_blank" class="btn-cta-outline shadow">
-                                <i class="bi bi-whatsapp me-2"></i> KONSULTASI GRATIS
+                                <i class="bi bi-whatsapp me-2"></i> HUBUNGI ADMIN
                             </a>
                         </div>
 
@@ -471,9 +490,9 @@
                 <div class="col-lg-2 col-md-6">
                     <h5>Belanja</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#">Semua Produk</a></li>
-                        <li><a href="#">Paling Laris</a></li>
-                        <li><a href="#">Produk Baru</a></li>
+                        <li><a href="produk.html">Semua Produk</a></li>
+                        <li><a href="produk.html">Paling Laris</a></li>
+                        <li><a href="produk.html">Produk Baru</a></li>
                         <li><a href="#">Paket Hemat</a></li>
                     </ul>
                 </div>
@@ -481,8 +500,8 @@
                 <div class="col-lg-2 col-md-6">
                     <h5>Perusahaan</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#">Cerita Kami</a></li>
-                        <li><a href="#">Keberlanjutan</a></li>
+                        <li><a href="about.html">Cerita Kami</a></li>
+                        <li><a href="about.html">Keberlanjutan</a></li>
                         <li><a href="#">Karir</a></li>
                         <li><a href="#">Pers</a></li>
                     </ul>

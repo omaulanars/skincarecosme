@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Blog Cosme Indonesia - Tips kecantikan, panduan skincare organik, dan berita terbaru seputar kesehatan kulit.">
+    <meta name="keywords" content="blog skincare, tips kecantikan alami, artikel kesehatan kulit, cosme blog">
+    <meta name="author" content="Cosme Indonesia">
+    <meta name="theme-color" content="#7d8f55">
+
+    <title>Blog & Tips | Cosme Indonesia</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skincarecosme.vercel.app/blog.html">
+    <meta property="og:title" content="Blog Cosme - Tips Kulit Sehat Alami">
+    <meta property="og:description" content="Temukan rahasia kulit sehat dengan bahan organik.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cosme+Blog">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary-green: #7d8f55;
+            --dark-green: #5a6b3a;
+            --bg-cream: #FDFBF7;
+            --bg-footer: #F2EBD9;
+            --text-heading: #1A1A1A;
+            --text-body: #555555;
+
+            --font-heading: 'Tenor Sans', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            line-height: 1.7;
+            background-color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: var(--font-heading);
+            color: var(--text-heading);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Helpers */
+        .text-green {
+            color: var(--primary-green) !important;
+        }
+
+        .bg-cream {
+            background-color: var(--bg-cream);
+        }
+
+        /* Navbar (Versi Tipis) */
+        .navbar {
+            padding: 12px 0;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-weight: 500;
+            color: var(--text-heading);
+            font-size: 0.95rem;
+            margin: 0 12px;
+            position: relative;
+        }
+
+        .nav-link.active {
+            color: var(--primary-green);
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: var(--primary-green);
+            transition: width .3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-social-icon {
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            transition: 0.3s;
+        }
+
+        .nav-social-icon:hover {
+            color: var(--primary-green);
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--bg-cream);
+            padding: 140px 0 80px 0;
+            text-align: center;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: -30px auto 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blog-search {
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-search:focus {
+            box-shadow: 0 10px 30px rgba(125, 143, 85, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        /* Blog Card */
+        .blog-card {
+            border: none;
+            height: 100%;
+            transition: 0.3s;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+        }
+
+        .blog-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            color: var(--text-heading);
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 2px;
+        }
+
+        .blog-body {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .blog-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .blog-link:hover {
+            color: var(--dark-green);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Floating Buttons */
+        .floating-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-float {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-float-wa {
+            background-color: #25D366;
+        }
+
+        .btn-float-wa:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .btn-float-top {
+            background-color: var(--text-heading);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .btn-float-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .btn-float-top:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-footer);
+            padding-top: 80px;
+            padding-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        footer h5 {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        footer ul li {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-wa-footer {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        /* Media Query Mobile */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+
+            .page-header {
+                padding: 100px 0 50px 0;
+            }
+
+            .display-4 {
+                font-size: 2.2rem;
+            }
+
+            footer {
+                padding-top: 50px;
+                text-align: center;
+            }
+
+            footer .d-flex.gap-3 {
+                justify-content: center;
+            }
+
+            .floating-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .btn-float {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">COSME</a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carapesan.html">Cara Pesan</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-4 align-items-center mt-3 mt-lg-0">
+                        <a href="#" aria-label="Instagram" class="nav-social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="TikTok" class="nav-social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube" class="nav-social-icon"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <span class="text-green text-uppercase fw-bold small mb-2 d-block" style="letter-spacing: 2px;">Artikel
+                    & Tips</span>
+                <h1 class="display-4 mb-3">Jurnal Kecantikan</h1>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Dapatkan wawasan terbaru tentang perawatan kulit, bahan alami, dan gaya hidup sehat bersama Cosme.
+                </p>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+
+                <div class="search-container">
+                    <div class="input-group">
+                        <input type="text" id="blogSearch" class="form-control blog-search"
+                            placeholder="Cari artikel (misal: kulit kering, jerawat)...">
+                        <button class="btn btn-custom rounded-pill ms-2" type="button"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="articleGrid">
+
+                    <div class="col-md-4 article-item">
+                        <div class="blog-card">
+                            <div class="blog-img-wrapper">
+                                <span class="blog-category">Tips Skincare</span>
+                                <img src="https://placehold.co/600x400/f3e5d0/7d8f55?text=Skincare+Routine"
+                                    alt="Urutan Skincare">
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta"><i class="bi bi-calendar3 me-2"></i> 12 Januari 2026</div>
+                                <h3 class="blog-title" style="font-family: var(--font-heading);">Urutan Pemakaian
+                                    Skincare Pagi yang Benar untuk Pemula</h3>
+                                <p class="text-muted small mb-4">Bingung mulai dari mana? Simak panduan langkah demi
+                                    langkah menggunakan skincare agar hasilnya maksimal.</p>
+                                <a href="urutan-pemakaian-skincare-pagi-pemula.html" class="blog-link">Baca Selengkapnya
+                                    <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 article-item">
+                        <div class="blog-card">
+                            <div class="blog-img-wrapper">
+                                <span class="blog-category">Bahan Alami</span>
+                                <img src="https://placehold.co/600x400/f9f7f2/7d8f55?text=Oat+Benefits"
+                                    alt="Manfaat Oat">
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta"><i class="bi bi-calendar3 me-2"></i> 08 Januari 2026</div>
+                                <h3 class="blog-title" style="font-family: var(--font-heading);">5 Manfaat Ajaib Oat
+                                    untuk Kulit Sensitif dan Berjerawat</h3>
+                                <p class="text-muted small mb-4">Mengapa oat menjadi bahan utama di banyak produk Cosme?
+                                    Temukan khasiat menenangkannya di sini.</p>
+                                <a href="5-manfaat-ajaib-oat-kulit-sensitif-berjerawat.html" class="blog-link">Baca
+                                    Selengkapnya <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 article-item">
+                        <div class="blog-card">
+                            <div class="blog-img-wrapper">
+                                <span class="blog-category">Gaya Hidup</span>
+                                <img src="https://placehold.co/600x400/e8e8e8/7d8f55?text=Healthy+Skin"
+                                    alt="Kulit Sehat">
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta"><i class="bi bi-calendar3 me-2"></i> 01 Januari 2026</div>
+                                <h3 class="blog-title" style="font-family: var(--font-heading);">Makanan yang Harus
+                                    Dihindari Agar Kulit Tetap Glowing</h3>
+                                <p class="text-muted small mb-4">Kecantikan dimulai dari dalam. Pelajari jenis makanan
+                                    yang bisa memicu masalah kulit.</p>
+                                <a href="makanan-yang-harus-dihindari-agar-kulit-tetap-glowing.html"
+                                    class="blog-link">Baca Selengkapnya <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="noResults" class="text-center mt-5" style="display: none;">
+                    <p class="text-muted">Artikel tidak ditemukan.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-section mt-5">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-white">
+                        <h2 class="mb-3" style="color: white;">Ingin Konsultasi Masalah Kulit?</h2>
+                        <p class="mb-4 opacity-75">Tim ahli kami siap membantu Anda menemukan solusi terbaik secara
+                            gratis.</p>
+                        <a href="https://wa.me/62895639068080" target="_blank"
+                            class="btn btn-light rounded-pill px-5 py-3 fw-bold shadow">
+                            <i class="bi bi-whatsapp me-2 text-success"></i> Chat Konsultan Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-container">
+        <button onclick="scrollToTop()" id="scrollTopBtn" class="btn-float btn-float-top" title="Kembali ke atas">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <a href="https://wa.me/62895639068080" target="_blank" class="btn-float btn-float-wa" title="Hubungi Kami">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-4">COSME</h4>
+                    <p class="text-muted small mb-4 pe-4">
+                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi dan
+                        khasiat nyata.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5>Belanja</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="produk.html">Semua Produk</a></li>
+                        <li><a href="produk.html">Paling Laris</a></li>
+                        <li><a href="produk.html">Produk Baru</a></li>
+                        <li><a href="#">Paket Hemat</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5>Perusahaan</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="about.html">Cerita Kami</a></li>
+                        <li><a href="about.html">Keberlanjutan</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Pers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5>Bantuan</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Retur Produk</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Lacak Pesanan</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12">
+                    <h5>Hubungi Kami</h5>
+                    <p class="small text-muted mb-3">Butuh bantuan cepat?</p>
+                    <a href="https://wa.me/62895639068080" target="_blank"
+                        class="btn btn-custom btn-wa-footer shadow-sm w-100 text-white"
+                        style="background-color: var(--primary-green); border: none;">
+                        <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top border-secondary-subtle">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">&copy; 2026 Cosme Indonesia. Hak Cipta Dilindungi.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="small text-muted me-3">Kebijakan Privasi</a>
+                    <a href="#" class="small text-muted">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 1. Search Logic
+        const searchInput = document.getElementById('blogSearch');
+        const articles = document.querySelectorAll('.article-item');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('keyup', function () {
+            const filter = this.value.toLowerCase().trim();
+            let count = 0;
+
+            articles.forEach(article => {
+                const title = article.querySelector('.blog-title').textContent.toLowerCase();
+                const category = article.querySelector('.blog-category').textContent.toLowerCase();
+
+                if (title.includes(filter) || category.includes(filter)) {
+                    article.style.display = 'block';
+                    count++;
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = (count === 0) ? 'block' : 'none';
+        });
+
+        // 2. Scroll Top Logic
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

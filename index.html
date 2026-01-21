@@ -16,7 +16,7 @@
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cosme.id/">
+    <meta property="og:url" content="https://skincarecosme.vercel.app/">
     <meta property="og:title" content="Cosme - Temukan Keajaiban Alam">
     <meta property="og:description" content="Perawatan kulit organik terbaik yang dipercaya oleh ribuan pelanggan.">
     <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cosme+Indonesia">
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Cosme Indonesia",
-      "url": "https://www.cosme.id",
+      "url": "https://skincarecosme.vercel.app/",
       "logo": "https://placehold.co/150x50?text=Cosme",
       "description": "Produk perawatan kulit organik premium yang terbuat dari 100% bahan alami.",
       "sameAs": [
@@ -115,7 +115,7 @@
             box-shadow: 0 5px 15px rgba(125, 143, 85, 0.2);
         }
 
-        /* Navbar - DIPERBAIKI: Padding dikurangi dari 25px ke 12px */
+        /* Navbar Tipis */
         .navbar {
             padding: 12px 0;
             background-color: rgba(253, 251, 247, 0.95);
@@ -161,7 +161,7 @@
             color: var(--primary-green);
         }
 
-        /* Hero - DIPERBAIKI: Padding atas ditambah menjadi 120px untuk kompensasi navbar */
+        /* Hero Section - Desktop */
         .hero-section {
             background-color: var(--bg-cream);
             padding: 120px 0 100px 0;
@@ -270,6 +270,53 @@
         footer a:hover {
             color: var(--primary-green);
         }
+
+        /* MEDIA QUERIES UNTUK MOBILE (Agar Proporsional) */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+                /* Brand agak kecil di HP */
+            }
+
+            .hero-section {
+                padding: 100px 0 60px 0;
+                /* Padding Hero lebih rapat di HP */
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                /* Judul tidak terlalu besar */
+            }
+
+            .hero-section .pe-lg-5 {
+                padding-right: 0 !important;
+                /* Hapus padding kanan di HP */
+            }
+
+            .hero-section img {
+                margin-top: 40px;
+                max-width: 80%;
+            }
+
+            footer {
+                padding-top: 50px;
+                text-align: center;
+                /* Footer rata tengah di HP */
+            }
+
+            footer .d-flex.gap-3 {
+                justify-content: center;
+                /* Sosmed rata tengah */
+            }
+
+            /* Tombol WA di footer full width di HP */
+            .btn-wa-footer {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -278,7 +325,7 @@
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">COSME</a>
+                <a class="navbar-brand" href="#">COSME</a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -286,10 +333,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#features">Keunggulan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Ulasan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carapesan.html">Cara Pesan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     </ul>
 
                     <div class="d-flex gap-4 align-items-center mt-3 mt-lg-0">
@@ -315,7 +362,7 @@
                             Kembalikan kilau alami kulit Anda dengan bahan-bahan organik terbaik.
                             Dibuat murni dari bumi, memanfaatkan anugerah alam khusus untuk Anda.
                         </p>
-                        <a href="#products" class="btn btn-custom shadow-sm">LIHAT KOLEKSI</a>
+                        <a href="produk.html" class="btn btn-custom shadow-sm">LIHAT KOLEKSI</a>
                     </div>
                     <div class="col-lg-6 position-relative text-center">
                         <img src="img/hero.png" alt="Produk Cosme Skincare" class="img-fluid img-soft-shadow"
@@ -409,6 +456,7 @@
                                 <span>Formula tidak lengket, nyaman seharian.</span>
                             </li>
                         </ul>
+                        <a href="produk.html" class="btn btn-custom">LIHAT DETAIL SERUM</a>
                     </div>
                     <div class="col-lg-6 offset-lg-1 mb-5 mb-lg-0">
                         <img src="img/serum.png" alt="Koleksi Serum Cosme" class="img-fluid w-100 img-soft-shadow"
@@ -605,12 +653,12 @@
 
     <footer>
         <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-4 col-md-6">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
                     <h4 class="mb-4">COSME</h4>
                     <p class="text-muted small mb-4 pe-4">
-                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi,
-                        keberlanjutan, dan khasiat nyata di setiap botolnya.
+                        Mendefinisikan ulang kecantikan melalui lensa alam. Kami berkomitmen pada transparansi dan
+                        khasiat nyata.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
@@ -618,6 +666,7 @@
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
                     </div>
                 </div>
+
                 <div class="col-lg-2 col-md-6">
                     <h5>Belanja</h5>
                     <ul class="list-unstyled small">
@@ -627,6 +676,7 @@
                         <li><a href="#">Paket Hemat</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-2 col-md-6">
                     <h5>Perusahaan</h5>
                     <ul class="list-unstyled small">
@@ -636,16 +686,27 @@
                         <li><a href="#">Pers</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-2 col-md-6">
                     <h5>Bantuan</h5>
                     <ul class="list-unstyled small">
                         <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Pengiriman & Retur</a></li>
+                        <li><a href="#">Retur Produk</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Lacak Pesanan</a></li>
                     </ul>
                 </div>
+
+                <div class="col-lg-3 col-md-12">
+                    <h5>Hubungi Kami</h5>
+                    <p class="small text-muted mb-3">Butuh bantuan cepat?</p>
+                    <a href="https://wa.me/62895639068080" target="_blank"
+                        class="btn btn-custom btn-wa-footer shadow-sm w-100 text-white">
+                        <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp
+                    </a>
+                </div>
             </div>
+
             <div class="row mt-5 pt-4 border-top border-secondary-subtle">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="small text-muted mb-0">&copy; 2026 Cosme Indonesia. Hak Cipta Dilindungi.</p>
