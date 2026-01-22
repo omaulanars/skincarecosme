@@ -1,0 +1,18 @@
+# Robots.txt untuk https://skincarecosme.vercel.app/
+# Mengizinkan semua bot pencari (Google, Bing, dll) untuk merayapi situs
+
+User-agent: *
+Allow: /
+
+# Mencegah crawling pada file sistem atau folder yang tidak perlu (Best Practice)
+Disallow: /cgi-bin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*?* # Opsional: Mencegah duplikasi konten dari parameter URL (jika ada tracking)
+
+# Pastikan bot bisa mengakses file CSS dan JS untuk melihat tampilan mobile
+Allow: /*.css$
+Allow: /*.js$
+
+# Peta Situs (Sangat Penting untuk SEO)
+Sitemap: https://skincarecosme.vercel.app/sitemap.xml
