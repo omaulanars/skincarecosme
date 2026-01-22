@@ -302,6 +302,74 @@
                 text-align: center;
             }
         }
+
+        /* --- TAMBAHAN STYLE UNTUK FLOATING BUTTONS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* WhatsApp Button Color */
+        .btn-wa-float {
+            background-color: #25D366;
+        }
+
+        /* Scroll Top Button Color */
+        .btn-scroll-top {
+            background-color: var(--primary-green);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        /* Class to trigger appearance */
+        .btn-scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Adjust for mobile to not cover content too much */
+        @media (max-width: 576px) {
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 
@@ -452,8 +520,7 @@
                         <div class="product-card">
                             <div class="product-img-wrapper">
                                 <span class="product-badge">Repair</span>
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Night+Cream"
-                                    alt="Night Recovery Cream">
+                                <img src="img/night-recovery-cream.png" alt="Night Recovery Cream">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Pelembab</small>
@@ -462,9 +529,7 @@
                                 <p class="text-green fw-bold product-price">Rp 155.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Night Recovery Cream"
-                                    data-price="Rp 155.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Night+Cream"
-                                    data-cat="Pelembab"
+                                    data-price="Rp 155.000" data-img="img/night-recovery-cream.png" data-cat="Pelembab"
                                     data-desc="Krim malam kaya nutrisi yang bekerja saat Anda tidur untuk memperbaiki tekstur kulit dan regenerasi sel."
                                     data-ingredients="Plant-based Retinol, Ceramides, Peptides, Lavender Oil, Squalane.">
                                     Lihat Detail
@@ -476,8 +541,7 @@
                     <div class="col-md-6 col-lg-3 product-item" data-category="sunscreen tabir surya spf">
                         <div class="product-card">
                             <div class="product-img-wrapper">
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Sunscreen"
-                                    alt="UV Shield SPF 50">
+                                <img src="img/uv-shield-spf-50.png" alt="UV Shield SPF 50">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Proteksi</small>
@@ -486,9 +550,7 @@
                                 <p class="text-green fw-bold product-price">Rp 115.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="UV Shield SPF 50"
-                                    data-price="Rp 115.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Sunscreen"
-                                    data-cat="Proteksi"
+                                    data-price="Rp 115.000" data-img="img/uv-shield-spf-50.png" data-cat="Proteksi"
                                     data-desc="Tabir surya ringan tanpa whitecast. Melindungi kulit dari sinar UVA dan UVB dengan hasil akhir matte."
                                     data-ingredients="Zinc Oxide, Titanium Dioxide, Centella Asiatica, Niacinamide.">
                                     Lihat Detail
@@ -500,8 +562,7 @@
                     <div class="col-md-6 col-lg-3 product-item" data-category="eye serum mata">
                         <div class="product-card">
                             <div class="product-img-wrapper">
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Eye+Serum"
-                                    alt="Revitalizing Eye Serum">
+                                <img src="img/revitalizing-eye-serum.png" alt="Revitalizing Eye Serum">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Perawatan Mata</small>
@@ -510,8 +571,7 @@
                                 <p class="text-green fw-bold product-price">Rp 135.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Revitalizing Eye Serum"
-                                    data-price="Rp 135.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Eye+Serum"
+                                    data-price="Rp 135.000" data-img="img/revitalizing-eye-serum.png"
                                     data-cat="Perawatan Mata"
                                     data-desc="Serum mata dengan kafein dan peptide. Mengurangi kantung mata dan menyamarkan garis halus."
                                     data-ingredients="Caffeine, Peptides, Cucumber Extract, Hyaluronic Acid.">
@@ -524,8 +584,7 @@
                     <div class="col-md-6 col-lg-3 product-item" data-category="masker mask clay">
                         <div class="product-card">
                             <div class="product-img-wrapper">
-                                <img src="https://placehold.co/400x500/f3e5d0/7d8f55?text=Clay+Mask"
-                                    alt="Purifying Clay Mask">
+                                <img src="img/purifying-clay-mask.png" alt="Purifying Clay Mask">
                             </div>
                             <div class="text-center">
                                 <small class="text-muted text-uppercase product-cat">Masker</small>
@@ -534,9 +593,7 @@
                                 <p class="text-green fw-bold product-price">Rp 105.000</p>
                                 <button type="button" class="btn btn-outline-custom mt-2" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="Purifying Clay Mask"
-                                    data-price="Rp 105.000"
-                                    data-img="https://placehold.co/400x500/f3e5d0/7d8f55?text=Clay+Mask"
-                                    data-cat="Masker"
+                                    data-price="Rp 105.000" data-img="img/purifying-clay-mask.png" data-cat="Masker"
                                     data-desc="Masker tanah liat untuk detoksifikasi pori-pori. Mengangkat minyak berlebih tanpa membuat kulit kering."
                                     data-ingredients="Kaolin Clay, Mugwort Extract, Salicylic Acid (Willow Bark), Tea Tree Oil.">
                                     Lihat Detail
@@ -678,6 +735,27 @@
         </div>
     </footer>
 
+    <div class="floating-buttons">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="float-btn btn-scroll-top"
+            id="scrollTopBtn" title="Kembali ke atas">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        <a href="https://wa.me/62895639068080?text=Halo%20Cosme,%20saya%20tertarik%20dengan%20produk%20Anda."
+            target="_blank" class="float-btn btn-wa-float" title="Chat WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>

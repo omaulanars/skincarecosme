@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://skincarecosme.vercel.app/">
     <meta property="og:title" content="Cosme - Temukan Keajaiban Alam">
     <meta property="og:description" content="Perawatan kulit organik terbaik yang dipercaya oleh ribuan pelanggan.">
-    <meta property="og:image" content="https://placehold.co/1200x630/7d8f55/fff?text=Cosme+Indonesia">
+    <meta property="og:image" content="https://skincarecosme.vercel.app/img/about.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
       "@type": "Organization",
       "name": "Cosme Indonesia",
       "url": "https://skincarecosme.vercel.app/",
-      "logo": "https://placehold.co/150x50?text=Cosme",
+      "logo": "https://skincarecosme.vercel.app/img/about.png",
       "description": "Produk perawatan kulit organik premium yang terbuat dari 100% bahan alami.",
       "sameAs": [
         "https://www.instagram.com/cosme",
@@ -317,6 +317,74 @@
                 text-align: center;
             }
         }
+
+        /* --- TAMBAHAN STYLE UNTUK FLOATING BUTTONS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* WhatsApp Button Color */
+        .btn-wa-float {
+            background-color: #25D366;
+        }
+
+        /* Scroll Top Button Color */
+        .btn-scroll-top {
+            background-color: var(--primary-green);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        /* Class to trigger appearance */
+        .btn-scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Adjust for mobile to not cover content too much */
+        @media (max-width: 576px) {
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 
@@ -456,7 +524,6 @@
                                 <span>Formula tidak lengket, nyaman seharian.</span>
                             </li>
                         </ul>
-                        <a href="produk.html" class="btn btn-custom">LIHAT DETAIL SERUM</a>
                     </div>
                     <div class="col-lg-6 offset-lg-1 mb-5 mb-lg-0">
                         <img src="img/serum.png" alt="Koleksi Serum Cosme" class="img-fluid w-100 img-soft-shadow"
@@ -668,32 +735,32 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6">
-                    <h5>Belanja</h5>
+                    <h5>Tautan</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#">Semua Produk</a></li>
-                        <li><a href="#">Paling Laris</a></li>
-                        <li><a href="#">Produk Baru</a></li>
-                        <li><a href="#">Paket Hemat</a></li>
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Produk</a></li>
+                        <li><a href="#">Cara Pesan</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-6">
-                    <h5>Perusahaan</h5>
+                    <h5>Produk Terlaris</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#">Cerita Kami</a></li>
-                        <li><a href="#">Keberlanjutan</a></li>
-                        <li><a href="#">Karir</a></li>
-                        <li><a href="#">Pers</a></li>
+                        <li>Serum</li>
+                        <li>Pelembab</li>
+                        <li>Masker</li>
+                        <li>Sunscreen</li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-6">
-                    <h5>Bantuan</h5>
+                    <h5>Network</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Retur Produk</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Lacak Pesanan</a></li>
+                        <li><a href="#">Network 1</a></li>
+                        <li><a href="#">Network 2</a></li>
+                        <li><a href="#">Network 3</a></li>
+                        <li><a href="#">Network 4</a></li>
                     </ul>
                 </div>
 
@@ -719,6 +786,27 @@
         </div>
     </footer>
 
+    <div class="floating-buttons">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="float-btn btn-scroll-top"
+            id="scrollTopBtn" title="Kembali ke atas">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        <a href="https://wa.me/62895639068080?text=Halo%20Cosme,%20saya%20tertarik%20dengan%20produk%20Anda."
+            target="_blank" class="float-btn btn-wa-float" title="Chat WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
